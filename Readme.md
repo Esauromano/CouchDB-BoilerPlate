@@ -1,5 +1,4 @@
-Easily start a Node.js, CouchDB project.
-Fo
+Easily start a Express.js, CouchDB project.
 
 
 
