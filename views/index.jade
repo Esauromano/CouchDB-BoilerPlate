@@ -1,0 +1,665 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Active-DS KPI Analytics
+    // Bootstrap core CSS
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet')
+    // Custom fonts for this template
+    link(href='/fontawesome-free/css/all.min.css', rel='stylesheet', type='text/css')
+    // Page level plugin CSS
+    link(href='/datatables/dataTables.bootstrap4.css', rel='stylesheet')
+    // Custom styles for this template
+    link(href='/css/sb-admin.css', rel='stylesheet')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+    link(rel='stylesheet', href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css')
+    link(href='//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', rel='stylesheet')
+    style.
+      h1{
+        text-align: center;
+      }
+      @import url("//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css");
+      a {
+        color: #808080 !important;
+      }
+      a:hover{
+        color: #bb0a30 !important;
+      }
+      .first {
+        position: relative;
+        margin-top: 20px;
+        height: 100px;
+      }
+      .first-nav {
+        position: absolute;
+        left: 48%;
+        margin-left: -55px !important;  /* 50% of your logo width */
+        display: block;
+      }
+      .mobilenav{
+        display: none;
+      }
+      .mobilenavHr{
+        display: none;
+      }
+      @media only screen and (max-width: 600px) {
+        .first-nav {
+          position: absolute;
+          left: 40%;
+          margin-left: -50px !important;  /* 50% of your logo width */
+          display: block;
+        }
+        .record{
+          display: none;
+        }
+        .alertsUser{
+          display: none;
+        }
+        .mobilenav{
+          display: flex;
+          height: 80px;
+        }
+        .mobilenavHr{
+          display: flex;
+        }
+      }
+      .record {
+        background-color: #bb0a30;
+        color: white !important;
+      }
+      .record:hover {
+        background-color: #808080;
+      }
+      .recordMob {
+        background-color: #bb0a30;
+        color: white !important;
+      }
+      .recordMob:hover {
+        background-color: #808080;
+      }
+      .badge-danger{
+        background-color: #bb0a30;
+        color: white;
+      }
+      .ml-auto {
+        margin-left: auto!important;
+      }
+      @media screen and (min-width: 768px){
+        .modal-dialog {
+          right: auto;
+          left: 0% !important;
+          width: 600px;
+          padding-top: 30px;
+          padding-bottom: 30px;
+        }
+      }
+      .card {
+        padding-top: 20px;
+        margin: 10px 0 20px 0;
+        background-color: rgba(214, 224, 226, 0.2);
+        border-top-width: 0;
+        border-bottom-width: 2px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        -webkit-box-shadow: none;
+        -moz-box-shadow: none;
+        box-shadow: none;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .soc {
+        color: #fff !important;
+      }
+      .card .card-heading {
+        padding: 0 20px;
+        margin: 0;
+      }
+      .card .card-heading.simple {
+        font-size: 20px;
+        font-weight: 300;
+        color: #bb0a30;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      .card .card-heading.image img {
+        display: inline-block;
+        width: 46px;
+        height: 46px;
+        margin-right: 15px;
+        vertical-align: top;
+        border: 0;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+      }
+      .card .card-heading.image .card-heading-header {
+        display: inline-block;
+        vertical-align: top;
+      }
+      .card .card-heading.image .card-heading-header h3 {
+        margin: 0;
+        font-size: 14px;
+        line-height: 16px;
+        color: #262626;
+      }
+      .card .card-heading.image .card-heading-header span {
+        font-size: 12px;
+        color: #bb0a30;
+      }
+      .card .card-body {
+        padding: 0 20px;
+        margin-top: 20px;
+      }
+      .card .card-media {
+        padding: 0 20px;
+        margin: 0 -14px;
+      }
+      .card .card-media img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .card .card-actions {
+        min-height: 30px;
+        padding: 0 20px 20px 20px;
+        margin: 20px 0 0 0;
+      }
+      .card .card-comments {
+        padding: 20px;
+        margin: 0;
+        background-color: #f8f8f8;
+      }
+      .card .card-comments .comments-collapse-toggle {
+        padding: 0;
+        margin: 0 20px 12px 20px;
+      }
+      .card .card-comments .comments-collapse-toggle a,
+      .card .card-comments .comments-collapse-toggle span {
+        padding-right: 5px;
+        overflow: hidden;
+        font-size: 12px;
+        color: #999;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .card-comments .media-heading {
+        font-size: 13px;
+        font-weight: bold;
+      }
+      .card.people {
+        position: relative;
+        display: inline-block;
+        width: 170px;
+        height: 300px;
+        padding-top: 0;
+        margin-left: 20px;
+        overflow: hidden;
+        vertical-align: top;
+      }
+      .card.people:first-child {
+        margin-left: 0;
+      }
+      .card.people .card-top {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: inline-block;
+        width: 170px;
+        height: 150px;
+        background-color: #ffffff;
+      }
+      .card.people .card-top.green {
+        background-color: #53a93f;
+      }
+      .card.people .card-top.blue {
+        background-color: #427fed;
+      }
+      .card.people .card-info {
+        position: absolute;
+        top: 150px;
+        display: inline-block;
+        width: 100%;
+        height: 101px;
+        overflow: hidden;
+        background: #ffffff;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .card.people .card-info .title {
+        display: block;
+        margin: 8px 14px 0 14px;
+        overflow: hidden;
+        font-size: 16px;
+        font-weight: bold;
+        line-height: 18px;
+        color: #bb0a30;
+      }
+      .card.people .card-info .desc {
+        display: block;
+        margin: 8px 14px 0 14px;
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 16px;
+        color: #bb0a30;
+        text-overflow: ellipsis;
+      }
+      .card.people .card-bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        display: inline-block;
+        width: 100%;
+        padding: 10px 20px;
+        line-height: 29px;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+      }
+      .card.hovercard {
+        position: relative;
+        padding-top: 0;
+        overflow: hidden;
+        text-align: center;
+      }
+      .desc{
+        color: #bb0a30;
+      }
+      .card.hovercard .cardheader {
+        background: url("https://s3-us-west-1.amazonaws.com/active-ds-assets/audicar.jpg");
+        background-size: cover;
+        height: 169px;
+      }
+      .card.hovercard .avatar {
+        position: relative;
+        top: -50px;
+        margin-bottom: -50px;
+      }
+      .card.hovercard .avatar img {
+        width: 85px;
+        height: 85px;
+        max-width: 85px;
+        max-height: 85px;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        border-radius: 50%;
+        border: 5px solid rgba(255,255,255,0.5);
+        margin-left: 380px;
+      }
+      .card.hovercard .info {
+        padding: 4px 8px 10px;
+      }
+      .card.hovercard .info .title {
+        margin-bottom: 4px;
+        font-size: 24px;
+        line-height: 1;
+        color: #262626;
+        vertical-align: middle;
+      }
+      .card.hovercard .info .desc {
+        overflow: hidden;
+        font-size: 12px;
+        line-height: 20px;
+        color: #737373;
+        text-overflow: ellipsis;
+      }
+      .card.hovercard .bottom {
+        padding: 0 20px;
+        margin-bottom: 17px;
+        height: 300px;
+      }
+      .messages{
+        padding-top: 10px;
+      }
+      .botonera{
+        background: url(https://www.audi.com/content/dam/ci/Fundamentals/Basics/Colours/02_Anwendungsbeispiele/06_Audi_Brandplattform_Colours_A.jpg?downsize=518px:*) !important;
+        height: 233px !important;
+        background-position-y: bottom !important;
+        background-size: cover !important;
+      }
+      .guate{
+        padding-bottom: 1px;
+      }
+  body#page-top
+    // Modal
+    #myModal.modal.fade(role='dialog')
+      .modal-dialog
+        // Modal content
+        .modal-content
+          .modal-body
+            .container
+              .row
+                .col-md-2
+                  a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/kpi') Monthly Operation Report
+                .col-md-1
+                  a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/target') Targets
+                .col-md-2
+                  a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/installed') Installed Capacity
+    .container
+      nav.navbar.navbar-expand.navbar-dark.bg-white.static-top.first
+        h2(style='margin: auto !important;') Audi Regional Office Management
+        // Navbar
+        ul.navbar-nav.ml-auto.ml-md-0.alertsUser
+          li.nav-item.nav-link.dropdown.no-arrow.mx-1
+            a.navbar-brand-logo(href='/site/index')
+              .logo
+                img(src='https://s3-us-west-1.amazonaws.com/active-ds-assets/Audi-Logo.svg', style='width: 150px; height: auto')
+      #content-wrapper
+        .container-fluid
+          .row
+            .col-md-6
+              .card.hovercard
+                .cardheader
+                .avatar
+                  img(alt='', src='http://lorempixel.com/85/85/people/9/')
+                .info
+                  .title
+                    a(target='_blank', href='https://scripteden.com/') Eden Ramirez
+                  .desc Regional manager
+                  .desc.guate Guatemala
+            .col-md-6.menuBotones
+              .card.hovercard
+                .cardheader.botonera
+                .info
+                  .row.firstRow
+                    .col-md-3.messages
+                      a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/directions')
+                        | Directions
+                    .col-md-3.messages
+                      a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/target')
+                        | Targets
+                    .col-md-3.messages
+                      a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/mor')
+                        | Indicators
+                    .col-md-3.messages
+                      a.btn.btn-danger.btn-lg.record.btn-sm(href='/site/quarter')
+                        | KPI Graphics
+          .row
+            .col-md-6.messages
+              .alert.alert-success(role='alert')
+                strong Well done!
+                |  You successfully passed this month targets.
+              .alert.alert-info(role='alert')
+                strong Heads up!
+                |  Remember you can create a report, anytime you want.
+            .col-md-6.messages
+              .alert.alert-warning(role='alert')
+                strong Warning!
+                |  three days until report window closes.
+              .alert.alert-danger(role='alert')
+                strong Oh snap!
+                |  Only 30% of your dealers have filled this month report.
+        // /.container-fluid
+        // /.content-wrapper
+        // /#wrapper
+        // Scroll to Top Button
+        a.scroll-to-top.rounded(href='/site/#page-top')
+          i.fas.fa-angle-up
+        // Bootstrap core JavaScript
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js')
+        script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+        link(rel='stylesheet', href='https://fonts.googleapis.com/icon?family=Material+Icons')
+        link(rel='stylesheet', href='https://code.getmdl.io/1.3.0/material.indigo-pink.min.css')
+        script(defer='', src='https://code.getmdl.io/1.3.0/material.min.js')
+        script(src='https://cdn.jsdelivr.net/npm/apexcharts')
+        // Core plugin JavaScript
+        script(src='/jquery-easing/jquery.easing.min.js')
+        // Custom scripts for all pages
+        script(src='/js/sb-admin.min.js')
+        script(type='text/javascript').
+          var graphs=null;
+          function add(a, b) {
+            return a + b;
+          }
+          function buildGraphs(variable, data, mensual, trimestral, acumulado){
+            var o2017 = data[variable][2017];
+            var sum2017 = o2017.reduce(add, 0);
+            var arr2017 = [];
+            arr2017.push(sum2017);
+            var o2018 = data[variable][2018];
+            var sum2018 = o2018.reduce(add, 0);
+            var arr2018 = [];
+            arr2018.push(sum2018);
+            console.log(sum2017 + ' ' + sum2018);
+            var arrayLength2017 = o2017.length;
+            var accumulator2017=[0,0,0,0];
+            for (var i = 0; i < arrayLength2017; i++) {
+              if(i < 4){
+                accumulator2017[0]+=o2017[i];
+              }
+              else if (i > 3 && i < 7){
+                accumulator2017[1]+=o2017[i];
+              }
+              else if (i > 6 && i < 10){
+                accumulator2017[2]+=o2017[i];
+              }
+              else if (i > 9 && i < 13){
+                accumulator2017[3]+=o2017[i];
+              }
+            }
+            console.log(accumulator2017);
+            var arrayLength2018 = o2018.length;
+            var accumulator2018=[0,0,0,0];
+            for (var i = 0; i < arrayLength2018; i++) {
+              if(i < 4){
+                accumulator2018[0]+=o2018[i];
+              }
+              else if (i > 3 && i < 7){
+                accumulator2018[1]+=o2018[i];
+              }
+              else if (i > 6 && i < 10){
+                accumulator2018[2]+=o2018[i];
+              }
+              else if (i > 9 && i < 13){
+                accumulator2018[3]+=o2018[i];
+              }
+            }
+            console.log(accumulator2018);
+            var optionsacumulado = {
+              chart: {
+                height: 350,
+                type: 'line',
+              },
+              colors: ['#808080', '#bb0a30'],
+              series: [{
+                name: '2018',
+                type: 'column',
+                data: arr2018
+              }, {
+                name: '2017',
+                type: 'line',
+                data: arr2017
+              }],
+              stroke: {
+                width: [0, 4]
+              },
+              title: {
+                text: 'Acumulated'
+              },
+              labels: ["Acumulated"],
+              xaxis: {},
+              yaxis: [{
+                title: {
+                  text: 'value',
+                },
+              }]
+            }
+            var chartacumulado = new ApexCharts(
+                    document.querySelector(acumulado),
+                    optionsacumulado
+            );
+            chartacumulado.render();
+            var optionstri = {
+              chart: {
+                height: 350,
+                type: 'line',
+              },
+              colors: ['#808080', '#bb0a30'],
+              series: [{
+                name: '2018',
+                type: 'column',
+                data: accumulator2018
+              }, {
+                name: '2017',
+                type: 'line',
+                data: accumulator2017
+              }],
+              stroke: {
+                width: [0, 4]
+              },
+              title: {
+                text: 'Quarterly Trend'
+              },
+              labels: ["Mar", "Jun", "Sep", "Dec"],
+              xaxis: {},
+              yaxis: [{
+                title: {
+                  text: 'value',
+                },
+              }]
+            }
+            var charttri = new ApexCharts(
+                    document.querySelector(trimestral),
+                    optionstri
+            );
+            charttri.render();
+            var optionsMonthly = {
+              chart: {
+                height: 350,
+                type: 'line',
+              },
+              colors: ['#808080', '#bb0a30'],
+              series: [{
+                name: '2018',
+                type: 'column',
+                data: o2018
+              }, {
+                name: '2017',
+                type: 'line',
+                data: o2017
+              }],
+              stroke: {
+                width: [0, 4]
+              },
+              title: {
+                text: 'Monthly Behavior'
+              },
+              labels: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+              xaxis: {},
+              yaxis: [{
+                title: {
+                  text: 'value',
+                },
+              }]
+            }
+            var chartMonthly = new ApexCharts(
+                    document.querySelector(mensual),
+                    optionsMonthly
+            );
+            chartMonthly.render();
+          }
+          function dividelos(array1,array2){
+            return array1.map(function (num, idx) {
+              if(array2[idx]!=0) {
+                return (num / array2[idx]);
+              }
+              else{
+                return 0;
+              }
+            });
+          }
+          function sumalos(array1,array2){
+            return array1.map(function (num, idx) {
+              return (num + array2[idx]);
+            });
+          }
+          function traite1(url, variable){
+            console.log(url);
+            console.log(variable);
+            $("#compare1_mensual").empty();
+            $("#compare1_trimestral").empty();
+            $("#compare1_acumulado").empty();
+            $.getJSON(url, function(data) {
+              buildGraphs(variable, data,"#compare1_mensual","#compare1_trimestral","#compare1_acumulado");
+            });
+          }
+          function traite2(url, variable){
+            console.log(url);
+            console.log(variable);
+            $("#compare2_mensual").empty();
+            $("#compare2_trimestral").empty();
+            $("#compare2_acumulado").empty();
+            $.getJSON(url, function(data) {
+              buildGraphs(variable, data,"#compare2_mensual","#compare2_trimestral","#compare2_acumulado");
+            });
+          }
+          //Aqui empieza el codigo de los selects
+          $( "#dealer1" ).change(function() {
+            var str = '/calculos/';
+            var variable = '';
+            $( "#dealer1 option:selected" ).each(function() {
+              str += $( this ).val();
+            });
+            $( "#variable option:selected" ).each(function() {
+              variable += $( this ).val();
+            });
+            traite1(str, variable);
+          });
+          $("#region1").change(function () {
+            var val = $(this).val();
+            if (val == "item1") {
+              $("#importer1").html("<option value=\"\">-- select one -- </option><option value='CostaRica'>Costa Rica</option><option value='Guatemala'>Guatemala</option>");
+            } else if (val == "item2") {
+              $("#importer1").html("<option value=\"\">-- select one -- </option><option value='Dominicana'>Dominicana</option>");
+            }
+          });
+          $("#importer1").change(function () {
+            var val = $(this).val();
+            if (val == "CostaRica") {
+              $("#dealer1").html("<option value=\"\">-- select one -- </option><option value='Pinares'>Pinares</option><option value='Sabana'>Sabana</option>");
+            } else if (val == "Guatemala") {
+              $("#dealer1").html("<option value=\"\">-- select one -- </option><option value='REGESA'>REGESA</option>");
+            } else if (val == "Dominicana") {
+              $("#dealer1").html("<option value=\"\">-- select one -- </option><option value='DESG'>DESG</option>");
+            }
+          });
+          //Aquí termina el codigo de los selects
+          //Aqui empieza el codigo de los selects
+          $( "#dealer2" ).change(function() {
+            var str = '/calculos/';
+            var variable = '';
+            $( "#dealer2 option:selected" ).each(function() {
+              str += $( this ).val();
+            });
+            $( "#variable option:selected" ).each(function() {
+              variable += $( this ).val();
+            });
+            traite2(str, variable);
+          });
+          $("#region2").change(function () {
+            var val = $(this).val();
+            if (val == "item1") {
+              $("#importer2").html("<option value=\"\">-- select one -- </option><option value='CostaRica'>Costa Rica</option><option value='Guatemala'>Guatemala</option>");
+            } else if (val == "item2") {
+              $("#importer2").html("<option value=\"\">-- select one -- </option><option value='Dominicana'>Dominicana</option>");
+            }
+          });
+          $("#importer2").change(function () {
+            var val = $(this).val();
+            if (val == "CostaRica") {
+              $("#dealer2").html("<option value=\"\">-- select one -- </option><option value='Pinares'>Pinares</option><option value='Sabana'>Sabana</option>");
+            } else if (val == "Guatemala") {
+              $("#dealer2").html("<option value=\"\">-- select one -- </option><option value='REGESA'>REGESA</option>");
+            } else if (val == "Dominicana") {
+              $("#dealer2").html("<option value=\"\">-- select one -- </option><option value='DESG'>DESG</option>");
+            }
+          });
+          //Aquí termina el codigo de los selects
